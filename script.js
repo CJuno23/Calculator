@@ -164,7 +164,7 @@ function calc (op) {
    }else if (currentInput !== "") {
         secondNumber = Number(currentInput);
         if (lastOperator) {
-            calculate = operate(lastOperator,firstNumber,secondNumber);
+            calculate = operate(lastOperator,firstNumber,secondNumber).toFixed(2);
             firstNumber = calculate;
             display.textContent = firstNumber;
         }
@@ -176,7 +176,7 @@ function equal () {
     if (currentInput !== "") {
         secondNumber = Number(currentInput);
         const result = operate(lastOperator,firstNumber,secondNumber);
-        display.textContent = result;
+        display.textContent = result.toFixed(2);
         firstNumber = result;
         currentInput = "";
         lastOperator = null;

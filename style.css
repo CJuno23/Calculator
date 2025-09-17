@@ -9,10 +9,6 @@ body {
     align-items: center;
     height: 100vh;
 }
-.calculator {
-  background-color: red;
-  height: 150px;
-}
 button {
     border: none;
     border-radius: 7px;
@@ -26,11 +22,12 @@ button {
     height: 40px;
     border-radius: 10px;
     text-align: right;
+    font-family: Share Tech Mono, sans-serif;
 }
 .calculator {
     background-color: #1e1e1e;
     padding: 1rem;
-    width: 350px;
+    width: 250px;
     border-radius: 20px;
     height: auto;
     box-shadow: 0 0 15px rgba(54, 54, 54, 0.3);
@@ -49,7 +46,8 @@ button {
 }
 .op {
     background-color: #3a3a3a;
-    color: white;
+    color: #fff;
+    font-weight: bolder;
 }
 button {
     font-size: 1.5rem;
@@ -60,6 +58,7 @@ button {
     width: 100%;
     color: #fff;
     cursor: pointer;
+    font-family: Share Tech Mono, sans-serif;
 }
 button:active {
     transform: scale(0.95);
@@ -77,8 +76,7 @@ button:hover {
     "seven eight nine divide"
     "four five six multiply"
     "one two three minus"
-    "zero clear equals addition"
-    "dot empty empty empty";
+    "zero clear equals addition";
 }
 .number[value="7"] { grid-area: seven; }
 .number[value="8"] { grid-area: eight; }
@@ -97,7 +95,7 @@ button:hover {
 .clear { grid-area: clear; }
 .equals { grid-area: equals; }
 .addition { grid-area: addition; }
-.empty1 {grid-area: empty1;}
-.empty2 {grid-area: empty2;}
-.empty3 {grid-area: empty3;}
-
+.flex {
+    display: flex;
+    gap: 0.75rem
+}
