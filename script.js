@@ -4,6 +4,7 @@ const multiply = document.querySelector(".multiply")
 const minus = document.querySelector(".minus");
 const divide = document.querySelector(".divide")
 const equals = document.querySelector(".equals");
+const clearNumber = document.querySelector(".clear-each-number");
 const numberButtons = document.querySelectorAll(".number");
 const clear = document.querySelector(".clear");
 let firstNumber;
@@ -126,6 +127,9 @@ equals.addEventListener("click", () => equal());
 clear.addEventListener("click", () => {
     clearCalculator();
 });
+clearNumber.addEventListener("click", () => {
+   
+});
 function addition(num1,num2){
     return num1 + num2;
 }
@@ -158,6 +162,10 @@ function clearCalculator () {
     symbol = null;
     display.textContent = "";
 }
+function clearEachNumber () {
+    let slice = currentInput;
+
+}
 function calc (op) {
    if (firstNumber === undefined) {
         firstNumber = Number(currentInput)
@@ -165,7 +173,6 @@ function calc (op) {
         secondNumber = Number(currentInput);
         if (lastOperator) {
             calculate = operate(lastOperator,firstNumber,secondNumber);
-            calculate = operate(lastOperator,firstNumber,secondNumber).toFixed(2);
             firstNumber = calculate;
             display.textContent = firstNumber;
         }
@@ -178,7 +185,6 @@ function equal () {
         secondNumber = Number(currentInput);
         const result = operate(lastOperator,firstNumber,secondNumber);
         display.textContent = result;
-        display.textContent = result.toFixed(2);
         firstNumber = result;
         currentInput = "";
         lastOperator = null;
