@@ -19,7 +19,6 @@ numberButtons.forEach((button) => {
         const value = (event.target.textContent);
         currentInput = (currentInput || "") + value;
         display.textContent = currentInput;
-        console.log(`CurrentInput:${currentInput}`);
     });
 });
 /*add.addEventListener("click", () => {
@@ -128,7 +127,10 @@ clear.addEventListener("click", () => {
     clearCalculator();
 });
 clearNumber.addEventListener("click", () => {
-   
+    let numberSliceDisplay = display.textContent;
+    numberSliceDisplay = numberSliceDisplay.slice(0, -1);
+    display.textContent = numberSliceDisplay;
+    currentInput = numberSliceDisplay;
 });
 function addition(num1,num2){
     return num1 + num2;
@@ -162,19 +164,21 @@ function clearCalculator () {
     symbol = null;
     display.textContent = "";
 }
-function clearEachNumber () {
-    let slice = currentInput;
-
-}
 function calc (op) {
    if (firstNumber === undefined) {
         firstNumber = Number(currentInput)
+        console.log(`FirstNumber:${firstNumber}`)
+        console.log(`CurrentInput:${currentInput}`)
    }else if (currentInput !== "") {
         secondNumber = Number(currentInput);
+        console.log(`FirstNumber:${firstNumber}`)
+        console.log(`CurrentInput:${currentInput}`)
         if (lastOperator) {
             calculate = operate(lastOperator,firstNumber,secondNumber);
             firstNumber = calculate;
             display.textContent = firstNumber;
+            console.log(`FirstNumber:${firstNumber}`)
+            console.log(`CurrentInput:${currentInput}`)
         }
    }
    currentInput = "";
