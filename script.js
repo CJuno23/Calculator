@@ -10,7 +10,6 @@ const clear = document.querySelector(".clear");
 let firstNumber;
 let secondNumber;
 let currentInput; 
-let isOperatorClicked = false;
 let symbol;
 let calculate;
 let lastOperator;
