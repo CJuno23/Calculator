@@ -9,11 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #000;
-}
-button {
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
+    font-family: Share Tech Mono, sans-serif;
 }
 .result {
     background-color: #000;
@@ -23,7 +19,6 @@ button {
     height: 40px;
     border-radius: 10px;
     text-align: right;
-    font-family: Share Tech Mono, sans-serif;
 }
 .calculator {
     background-color: #1e1e1e;
